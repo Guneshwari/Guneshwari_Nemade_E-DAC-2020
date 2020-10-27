@@ -1,0 +1,138 @@
+
+
+//1	Write a program to print table of any entered number using loop.
+
+/*
+import java.util.*;
+class Tableasg2
+{
+	public static void main(String args[])
+	{
+		int i ,n,table;
+		Scanner ob=new Scanner(System.in);
+		System.out.println("Enter the number   ...  ");	
+		n=ob.nextInt();
+		for(i=1;i<=10;i++)
+		{	
+			table=i*n;
+			System.out.println(n+"x"+i+"="+table);	
+		}
+		
+	}
+}*/
+
+//2.	Write a program to reverse a given number.
+/*
+import java.util.*;
+class reverse
+{
+	public static void main(String args[])
+	{
+		int num,rev=0,rem;
+		Scanner ob=new Scanner(System.in);
+		System.out.println("Enter the number   ...  ");	
+		num=ob.nextInt();
+		while(num!=0)
+		{
+			rev=rev*10+rem;
+			num=num/10;
+			
+		}System.out.print(""+rev);	
+	}
+}
+*/
+
+//3.	Program to check whether number is prime or not.
+/*
+import java.util.*;
+public class prime
+{    
+	public static void main(String args[])
+	{    
+		int i,count=0,num;
+		Scanner o= new Scanner(System.in);
+		System.out.println("enter a number of ur choice  ");
+		num=o.nextInt();
+		for(i=2;i<=num;i++)
+		{
+			if(num%i==0)
+				count++;
+		}
+		if(count==1)
+		{
+			System.out.println("number prime");
+		}
+		else
+		{
+			System.out.println("number not prime");
+		}
+	}    
+}
+*/
+//4.	Calculate  series : 12+22+32+42+.........+n2
+/*
+import java.util.*;
+public class pattern_no
+{    
+	public static void main(String args[])
+	{    
+		int num;
+		Scanner o= new Scanner(System.in);
+		System.out.println("enter a number of ur choice  ");
+		num=o.nextInt();
+		for(int i=1;i<=10;i++)
+		{
+			num=num+10;
+			System.out.print(" "+num);
+		
+		}
+		
+	}
+}	
+*/
+//5.Print all prime numbers between two given numbers. [ break continue ]
+/*
+import java.util.*;
+public class prime01
+{    
+	public static void main(String args[])
+	{    
+		int i,num1,num2,num;
+		Scanner o= new Scanner(System.in);
+		System.out.println("enter a number of ur choice  ");
+		num1=o.nextInt();
+		System.out.println("enter a number of ur choice  ");
+		num2=o.nextInt();
+		for(num=num1;num<=num2;num++)
+			{
+				for(i=2;i<=num;i++)
+				{
+					if(num%i==0)			
+						break;
+				}
+				if(i==num)
+				{
+					System.out.println("number "+num);
+				}
+			}
+	}    
+}
+*/
+//6.	Program to show sum and average of 10 element array. Accept array elements from user. 
+/*
+import java.util.*;
+class Arr_avg{
+	public static void main(String args[])
+	{
+		int arr[]=new int[10],sum=0;
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter array elements  ");
+		for(int i=0;i<arr.length;i++)
+		{
+			arr[i]=sc.nextInt();
+			sum+=arr[i];
+		}System.out.println("Sum is "+sum);
+		
+	}
+}
+*/
