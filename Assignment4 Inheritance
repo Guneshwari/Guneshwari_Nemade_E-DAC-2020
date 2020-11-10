@@ -1,0 +1,294 @@
+class Employee{
+    static int empNo;
+    int salary;
+    static int totalSalary;
+
+    Employee(int salary){
+        empNo++;
+        this.salary = salary;
+        this.totalSalary = totalSalary+salary;
+    }
+
+    void display(){
+        System.out.println("Total employee is : "+empNo);
+        System.out.println("Total Salary is : "+totalSalary);
+    }
+
+}
+class Main{
+    public static void main(String[] args){
+        Employee e1 = new Employee(1000);
+        Employee e2 = new Employee(2000);
+        Employee e3 = new Employee(3000);
+        Employee e4 = new Employee(4000);
+        e1.display();
+
+    }
+}
+
+______________________________________________________________________________________________________________________-
+class Product{
+    int pid;
+    int price;
+    int quantity;
+    // int amt;
+    static int a[] = new int[5];
+    static int i=0;
+
+    Product(int pid , int price , int quantity){
+        this.pid = pid;
+        this.price = price;
+        this.quantity = quantity;
+    }
+    void show(){
+        System.out.println("Pid : "+pid+" Price : "+price+" Quantity : "+quantity);
+    }
+    static void amount(int price , int quantity){
+        a[i] = price * quantity ;
+      
+        i++;
+        // System.out.println("Total amount is : "+amt);
+       
+    }
+}
+
+class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        Product arr[] = new Product[5];
+        int arrPrice[] = new int[5];
+        for(int i=0 ; i<arr.length ; i++){
+            System.out.print("Enter the Pid  of product : ");
+            int pid = sc.nextInt();
+            System.out.print("Enter the Price  of product : ");
+            int price = sc.nextInt();
+            System.out.print("Enter the Quantity  of product : ");
+            int quantity = sc.nextInt();
+
+            Product p = new Product(pid,price,quantity);
+            arr[i]=p;
+            arrPrice[i] = arr[i].price;
+            Product.amount(arr[i].price , arr[i].quantity);
+            
+
+                       
+        }
+        int highestPrice = Arrays.stream(arrPrice).max().getAsInt();
+
+
+        System.out.println("Highest Price is "+highestPrice);
+        for(int k = 0 ; k<arrPrice.length ;k++){ // 4 = 500
+            if(arrPrice[k]==highestPrice){
+                System.out.println("Pid of highest Price is : "+arr[k].pid);
+            }
+        }
+        
+        for( Product j : arr) j.show();
+       
+        for ( int l=0 ; l<5; l++)
+             System.out.println("Total amount of "+l+" : "+Product.a[l]);
+    }
+}
+___________________________________________________________________________________________________________________________
+class Faculty{
+    int facultyId ;
+    int salary ;
+    
+    void input(int facultyId){
+        this.facultyId = facultyId;
+    }
+    void printSalary(){
+        System.out.println("Salary is : "+salary);
+    }
+} 
+class FullTimeFaculty extends Faculty{
+    int basicSalary;
+    int allowance;
+
+    void input(int facultyId ,int basicSalary , int allowance){
+        super.input(facultyId);
+        this.basicSalary = basicSalary;
+        this.allowance = allowance;
+        this.salary = basicSalary + allowance;
+    }
+
+}
+class PartTimeFaculty extends Faculty{
+    int workingHours;
+    int ratePerHour;
+    void input(int facultyId , int workingHours , int ratePerHour){
+        super.input(facultyId);
+        this.workingHours = workingHours;
+        this.ratePerHour = ratePerHour;
+        this.salary = workingHours * ratePerHour;
+    }
+}
+
+class Main{
+    public static void main(String[] args){
+        FullTimeFaculty ftf = new FullTimeFaculty();
+        ftf.input(1,10000,2000);
+        ftf.printSalary();
+
+        PartTimeFaculty ptf = new PartTimeFaculty();
+        ptf.input(2,100,100);
+        ptf.printSalary();
+
+    }
+}
+________________________________________________________________________________________________________
+package M2ass;
+
+import java.util.Scanner;
+class OneBHK{
+    int roomArea;
+    int hallArea;
+    int price;
+
+    OneBHK(){
+        roomArea = 100;
+        hallArea = 100;
+        price = 10000;
+    }
+
+    OneBHK(int roomArea , int hallArea , int price){
+        this.roomArea = roomArea;
+        this.hallArea = hallArea;
+        this.price = price;
+    }
+    void show(){
+        System.out.println("\n\nRoom area : "+roomArea);
+        System.out.println("Hall area : "+hallArea);
+        System.out.println("Price  ; "+price);
+    }
+}
+
+class TwoBHK  extends OneBHK{
+    int room2Area;
+
+    TwoBHK(int roomArea , int hallArea , int price , int room2Area ){
+        super(roomArea,hallArea,price);
+        this.room2Area = room2Area;
+    }
+    void show(){
+        super.show();
+        System.out.println("Room 2 Area : "+room2Area);
+    }
+
+}
+
+class Main{
+    public static void main(String[] agrs){
+        TwoBHK t1 = new TwoBHK(100,100,10000,100);
+        TwoBHK t2 = new TwoBHK(200,200,20000,200);
+        TwoBHK t3 = new TwoBHK(300,300,30000,300);
+        TwoBHK arr[] = {t1,t2,t3};
+        for(TwoBHK i : arr) i.show();
+    }
+}
+_________________________________________________________________________________________________________________________
+class Employee{
+    static int empNo;
+    int salary;
+    static int totalSalary;
+
+    Employee(int salary){
+        empNo++;
+        this.salary = salary;
+        this.totalSalary = totalSalary+salary;
+    }
+
+    void display(){
+        System.out.println("Total employee is : "+empNo);
+        System.out.println("Total Salary is : "+totalSalary);
+    }
+
+}
+class Main{
+    public static void main(String[] args){
+        Employee e1 = new Employee(1000);
+        Employee e2 = new Employee(2000);
+        Employee e3 = new Employee(3000);
+        Employee e4 = new Employee(4000);
+        e1.display();
+
+    }
+}
+_________________________________________________________________________________________________________
+class OneBHK{
+    int roomArea;
+    int hallArea;
+    int price;
+
+    OneBHK(){
+        roomArea = 100;
+        hallArea = 100;
+        price = 10000;
+    }
+
+    OneBHK(int roomArea , int hallArea , int price){
+        this.roomArea = roomArea;
+        this.hallArea = hallArea;
+        this.price = price;
+    }
+    void show(){
+        System.out.println("\n\nRoom area : "+roomArea);
+        System.out.println("Hall area : "+hallArea);
+        System.out.println("Price  ; "+price);
+    }
+}
+
+class TwoBHK  extends OneBHK{
+    int room2Area;
+
+    TwoBHK(int roomArea , int hallArea , int price , int room2Area ){
+        super(roomArea,hallArea,price);
+        this.room2Area = room2Area;
+    }
+    void show(){
+        super.show();
+        System.out.println("Room 2 Area : "+room2Area);
+    }
+
+}
+
+class Main{
+    public static void main(String[] agrs){
+        TwoBHK t1 = new TwoBHK(100,100,10000,100);
+        TwoBHK t2 = new TwoBHK(200,200,20000,200);
+        TwoBHK t3 = new TwoBHK(300,300,30000,300);
+        TwoBHK arr[] = {t1,t2,t3};
+        for(TwoBHK i : arr) i.show();
+    }
+}
+_________________________________________________________________________________________________________
+import java.util.*;
+class MathOperation{
+  
+    static int multiply(int a , int b){
+        return a*b;
+    }
+    static float multiply(float a, float b, float c){
+        return a*b*c;
+    }
+    static int multiply(int[] arr){
+        int sum = 1;
+        for(int i=0; i<arr.length; i++){
+            sum = sum * arr[i];
+        }
+        return sum;
+    }
+    static double multiply(double a , int b){
+        return a*b;
+    }
+}
+
+class Main{
+    public static void main(String[] args){
+        System.out.println("Method A is : "+ MathOperation.multiply(10,20));
+        System.out.println("Method B is : "+ MathOperation.multiply(10.11f,20.22f,33.33f));
+        int arr[] = {1,2,3,4,5};
+        System.out.println("Method C is : "+ MathOperation.multiply(arr));
+        System.out.println("Method D is : "+ MathOperation.multiply(10.12,20));
+    }
+}
