@@ -1,0 +1,47 @@
+create database Ass1;
+use Ass1;
+create table Member(Member_id integer(5),
+Member_name varchar(30),
+Member_address varchar(50),
+Acc_Open_Date date,
+Membership_type Varchar(20),
+Penalty_Amount integer(7));
+insert into Member values(3,'Gaurav','pune','2020-08-12','Annual',900);
+insert into Member values(4,'Gauravi','pune','2010-01-12','Lifetime',500);
+insert into Member values(5,'yadav','thane','2016-11-12','Half Yearly',900);
+insert into Member values(6,'ganesh','navi mumbai','2011-10-20','Quarterly',1200);
+select * from Member;
+show tables;
+create table Books1(Book_No integer(6),
+Book_Name varchar(30),
+Author_name varchar(30),
+Cost integer(7),
+Category  char(10));
+insert into Books1 values(101,'Let us C','Denis Ritchie',450,'System');
+insert into Books1 values(102,'Oracle – Complete Ref','Loni',550,'Database');
+insert into Books1 values(103,'Mastering SQL','Loni',250,'Database');
+insert into Books1 values(104,'PL SQL-Ref','ScottUrman',750,'Database');
+select * from Books1;
+show tables;
+create table Issue(Lib_Issue_Id integer(10),
+Book_No integer(6),
+Member_Id integer(5),
+Issue_Date date,
+Return_date date);
+insert into Issue values(1101,961,500,'2018-08-06','2018-09-07');
+insert into Issue values(1012,962,501,'2014-07-06','2014-08-14');
+insert into Issue values(1401,963,502,'2016-04-06','2016-05-19');
+insert into Issue values(1501,964,503,'2020-01-23','2020-03-14');
+select * from Issue;
+show tables;
+alter table Member drop column Penalty_Amount;
+select * from Member;
+insert into Member values(1,'Richa Sharma','pune','2010-10-05','Lifetime');
+insert into Member values(2,'Garima Sen','pune',current_date(),'Annual');
+update Books set Cost = 300 where Book_No = 103;
+drop table Issue;
+show tables;
+
+
+
+
