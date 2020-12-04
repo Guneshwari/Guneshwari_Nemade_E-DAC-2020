@@ -41,6 +41,14 @@ insert into Member values(2,'Garima Sen','pune',current_date(),'Annual');
 update Books set Cost = 300 where Book_No = 103;
 drop table Issue;
 show tables;
+create table Issue(Lib_id int(5) , Book_No int(6), mem_id int(5), issue_date Date, Return_date Date);
+insert into Issue values(7001, 101, 1, '2006/12/10', null);
+insert into Issue values(7002, 102, 2, '2006/10/10', null);
+insert into Issue values(7003, 104, 1, '2006/1/15', null);
+insert into Issue values(7004, 101, 1, '2006/4/10', null);
+insert into Issue values(7005, 104, 2, '2006/11/10', null);
+insert into Issue values(7006, 101, 3, '2006/10/15', null);
+select Lib_id,Book_no,mem_id as ma,date_format(issue_date,'%d-%b-%y') as issue_date,Return_date from issue;
 
 
 
