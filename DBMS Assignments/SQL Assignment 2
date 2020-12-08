@@ -102,12 +102,76 @@ SUM(PRICE) < 500;
 use ass2;
 select * from titles;
 select * from titles where titleid=101 or price<500;
+SELECT * FROM SUBJECTS WHERE SUBID IN('JAVA','JEE');
+SELECT * FROM AUTHORS WHERE AUID >103;
+SELECT * FROM TITLES WHERE PUBDATE < '2012-04-03' ORDER BY PUBDATE DESC;
+
 select * from publishers where pname in('TECHMEDIA','WROX');
 
 select max(price) from titles; 
 select avg(importance) from titleauthors;
 select count(auid) from authors;
 select sum(price) from titles;
+
+
+CREATE TABLE Employee(
+emp_id integer(6),
+emp_name char(50));
+
+insert into Employee values(101,'sayali');
+insert into Employee values(102,'sohil');
+
+alter table employee modify column emp_name varchar(50);
+SET SQL_SAFE_UPDATES = 0;
+update employee set emp_name="scott" where emp_id=101;
+select * from employee;
+
+SELECT CHAR_LENGTH("cdac juhu") AS LengthOfString;
+select ascii("cdac juhu") AS NumCodeOfFirstChar;
+select character_length("cdac juhu") as lengthofstring;
+select concat("cdac","juhu") as concatenatedstring;
+select instr("cadc juhu","h") as matchposition;
+select lcase("CDAC JUHU");
+SELECT LENGTH("CDAC JUHU") AS LENGTHOFSTRING;
+SELECT REVERSE("CDAC JUHU");
+SELECT SUBSTRING("CDAC JUHU",2,3) AS ExtractString;
+SELECT SUBSTRING_INDEX("CDAC.JUHU",".",1);
+SELECT UCASE("cdac juhu");
+select trim('   cdac juhu  ') as trimmedstring;
+
+select adddate("2017-02-03",interval 20 day);
+select addtime("2017-02-03 09:34:25","2");
+select current_date();
+select current_time();
+select current_timestamp();
+select date("2018-02-08   08:25:41");
+select date_format("2019-04-02", "%w %m %y");
+select date_sub("2017-02-03",interval 10 day);
+select day("2015-02-04");
+select dayname("2015-02-04");
+select dayofmonth("2015-02-04");
+select dayofweek("2015-02-04");
+select dayofyear("2015-02-04");
+select extract(month from "2015-02-04");
+select from_days(685467);
+select hour(" 2017-06-20 09:34:00");
+select last_day("2017-06-26");
+select localtime();
+
+
+select sysdate();
+SELECT SYSDATE() + 1;
+SELECT TIME("19:30:10");
+select system_user();
+select last_day("2003-04-05");
+
+
+
+
+
+
+
+
 
 
 
