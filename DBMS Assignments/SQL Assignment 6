@@ -1,0 +1,115 @@
+create database Assignment_6;
+use  Assignment_6;
+drop database Assignment_6;
+show databases;
+drop function Que_1;
+SET GLOBAL log_bin_trust_function_creators = 1;
+
+-- Que 1
+delimiter $$
+create function Que_1(a int(10)) returns int(10)
+begin
+declare factorial int(10) default 1;
+test_loop:repeat
+set factorial= factorial *a;
+set a= a-1;
+until a=1
+end repeat;
+return factorial;
+end $$
+select Que_1(5);
+
+-- Que 2
+delimiter $$
+create function Que_2(n int(5)) returns varchar(25)
+begin
+declare flag int(2) default 1;
+declare i int(2) default 2;
+while i<n 
+do
+	if n % i = 0 then
+		set flag = 0;
+	end if;
+	set i=i+1;
+    end while;
+if flag = 1 then
+	return "Prime number";
+	else 
+	return "Not Prime Number";
+end if;
+end $$
+select Que_2(8);
+
+-- Que 3
+delimiter $$
+create function Que_3 (inches int (10))returns varchar(200)
+begin
+declare yard numeric(10);
+declare foot numeric(10);
+set yard= inches / 36;
+set inches = inches % 36;
+set foot= inches / 12;
+set inches = inches % 12;
+return concat(yard ,' yard ', foot ,' foot ',inches ,'inches');
+end $$
+select Que_3(124);
+
+-- Que 4
+Create table EMP ( EMPNO integer(4) not null, ENAME varchar(30) not null, JOB varchar(10), MGR numeric(4), HIREDATE date, SAL numeric(7,2), 
+DEPTNO integer(2) );
+Insert into EMP (EMPNO ,ENAME, JOB, MGR, HIREDATE, SAL, DEPTNO ) values(1000,  'Manish' , 'SALESMAN', 1003,  '2020-02-18', 600,  30);
+Insert into EMP (EMPNO ,ENAME, JOB, MGR, HIREDATE, SAL, DEPTNO ) values(1001,  'Manoj' , 'SALESMAN', 1003,  '2018-02-18', 600,  30) ;
+Insert into EMP (EMPNO ,ENAME, JOB, MGR, HIREDATE, SAL, DEPTNO ) values(1002 , 'Ashish', 'SALESMAN',1003 , '2013-02-18',  750,  30 );
+Insert into EMP (EMPNO ,ENAME, JOB, MGR, HIREDATE, SAL, DEPTNO ) values(1004,  'Rekha', 'ANALYST', 1006 , '2001-02-18', 3000,  10);
+Insert into EMP (EMPNO ,ENAME, JOB, MGR, HIREDATE, SAL,DEPTNO ) values(1005 , 'Sachin', 'ANALYST', 1006 ,  '2019-02-18', 3000, 10 );
+Insert into EMP (EMPNO ,ENAME, JOB, MGR, HIREDATE, SAL, DEPTNO) values(1006,  'Pooja',  'MANAGER'  ,     null    , '2000-02-18' ,6000, 10 );
+desc EMP;
+select * from EMP;
+Create table dept (dno integer(4) not null, dname varchar(10) not null,area varchar(30));
+Insert into dept(dno,dname,area) values(10,'Store','Mumbai');
+Insert into dept(dno,dname,area) values(20,'Purchase','Mumbai');
+Insert into dept(dno,dname,area) values(30,'Store', 'Delhi');
+Insert into dept(dno,dname,area) values(40,'Marketing','Pune');
+Insert into dept(dno,dname,area) values(50,'Finance','Delhi');
+Insert into dept(dno,dname,area) values(60,'Accounts','Mumbai');
+desc dept;
+SET SQL_SAFE_UPDATES = 0;
+drop function Que_4; 
+delimiter $$
+create function Que_4(deptno1 int (5)) returns int (5)
+begin
+update  emp set sal = sal+(sal * 0.1) where deptno = deptno1;
+return 1;
+end $$
+select Que_4(10);
+
+-- Que 5
+
+delimiter $$
+CREATE FUNCTION USER_ANNUAL_COMP (P_ENO INT4,P_COMP INT4) RETURNS INT8
+BEGIN
+DECLARE ANNUAL_COM, SALR INT8;
+SET SALR=(SELECT (SAL) FROM EMP WHERE EMPNO=P_ENO);
+SET ANNUAL_COM = (SALR + P_COMP)*12;
+RETURN ANNUAL_COM;
+END$$
+SELECT SAL FROM EMP WHERE EMPNO=1004;
+SELECT USER_ANNUAL_COMP(1004,200);
+
+drop function user_mannual_comp;
+
+-- Que 6
+drop procedure Uesr_quey_emp;
+delimiter $$
+create procedure Uesr_quey_emp(in p_myeno int, out p_myjob int, out p_mysal int)
+begin
+declare var int ;
+set var =(select empno from emp where empno=myeno);
+if p_myeno = var then
+select sal,job into p_myeno,p_myjob from emp where empno =p_myeno;
+else 
+select "Emp id does not exist";
+end if;
+end $$
+call Uesr_quey_emp(1,@x,@y);
+select @x,@y;
