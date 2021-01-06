@@ -1,0 +1,31 @@
+Q1---------------------------------------------------------------
+var add = (function () {
+  var counter = 0;
+  return function () {counter += 1; return counter;}
+})();
+undefined
+add();
+1
+add();
+2
+add();
+3
+
+Q2---------------------------------------------------------------
+
+function reverse(){
+
+var str = "Guneshwari"
+var rev_str="";
+for(var i = str.length-1;i>=0;i--)
+{
+rev_str = rev_str+str[i];
+}
+return rev_str;
+}
+reverse();
+"irawhsenuG"
+
+
+Q3----------------------------------------------------------------
+
