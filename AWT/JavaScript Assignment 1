@@ -1,0 +1,126 @@
+Q1----------------------------------------------------------------
+function myfun(){
+  console.log("EDAC");
+}
+undefined
+myfun();
+EDAC
+undefined
+
+
+function myfun(a,b){
+  return a*b;
+}
+undefined
+myfun(2,3);
+6
+
+
+Q2-----------------------------------------------------------------
+
+var person={firstname:"ABC",lastname:"pqr"}
+undefined
+console.log(person.lastname);
+pqr debugger eval code:1:9
+undefined
+console.log(person.firstname);
+ABC
+
+Q3----------------------------------------------------------------
+var car =["bullet","volvo","BMW"]
+undefined
+console.log(car);
+Array(3) [ "bullet", "volvo", "BMW" ]
+debugger eval code:1:9
+undefined
+
+
+Q4----------------------------------------------------------------
+function is_integer(num){
+if(isNaN(num))
+{
+  console.log(num + "is not an integer");
+
+}
+
+else 
+{
+console.log(num + "is a integer");
+}
+}
+
+undefined
+is_integer(10);
+10is a integer
+
+Q5------------------------------------------------------------------
+function add_add(arr)
+{
+  var sum=0;
+  for(var i in arr)
+    {
+      sum+=arr[i];
+    }
+  return sum;
+}
+
+arr=[1,2,3,4,5];
+add_add(arr);
+15
+
+Q6--------------------------------------------------------------------
+
+
+function celcius(f){
+  return (5/9) * (f-32);
+}
+undefined
+celcius(77);
+25
+function Fahrenheit(c){
+  return ((c*1.8)+32);
+}
+undefined
+Fahrenheit(100);
+212
+
+Q7---------------------------------------------------------------------
+function factorial(n)
+{
+ var fact = 1;
+  for(var i =n;i>1;i--)
+    {
+      fact = fact* i;
+    }
+  return fact;
+}
+
+ factorial(5);
+120
+
+Q8----------------------------------------------------------------------
+function convert_to_Coins(amount){
+           var  tf = amount/25;   // tf=3
+            amount = amount % 25; // amount=12 
+            var tn = amount/10; // tn=1
+            amount = amount % 10; //amount=2
+            var F = amount/5;
+            amount = amount % 5;
+            var t = amount/2;
+            amount = amount % 2;
+            console.log("Rs.25 Coins: "+Math.floor(tf));
+            console.log("Rs.10 Coins: "+Math.floor(tn));
+            console.log("Rs.5 Coins: "+Math.floor(F));
+            console.log("Rs.2 Coins: "+Math.floor(t));
+            console.log("Rs.1 Coins: "+Math.floor(amount));
+            }
+            
+            
+            convert_to_Coins(85);
+Rs.25 Coins: 3 debugger eval code:10:21
+Rs.10 Coins: 1 debugger eval code:11:21
+Rs.5 Coins: 0 debugger eval code:12:21
+Rs.2 Coins: 0 debugger eval code:13:21
+Rs.1 Coins: 0 debugger eval code:14:21
+undefined
+            
