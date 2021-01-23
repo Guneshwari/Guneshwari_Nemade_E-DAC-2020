@@ -1,0 +1,121 @@
+
+.container{
+    font-family: 'Redressed', cursive;
+    height: 80%;
+    width: 80%;
+    
+}
+.bgimg{
+    background-image: url('../clgfests.jpg');
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    width: 100%;
+    height: 900px;
+}
+
+.hearderset h2{
+    font-size: 50px;
+}
+
+.carousel{
+    
+    background: rgb(21, 53, 68);
+    color: black;
+    position: absolute;
+  text-align: center;
+  image-resolution: absolute;
+  padding: 20px;
+  
+  
+ 
+}
+
+.carousel-inner img {
+    padding: 100px;
+    width: 50%;
+    height: 50%;
+    color: black;
+    text-align: center;
+   
+    
+  }
+
+.carousel h3{
+    color: black;
+    text-align: center;
+    
+}
+
+.carousel p{
+    color: black;
+    text-align: center;
+}
+
+#portfolio {
+    background-color: rgb(85, 59, 109);
+    padding: 70px 90px;
+    color: #080808ec;
+    
+}
+
+
+#portfolio .portfolio-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    -webkit-transition: all ease-in-out 0.4s;
+    transition: all ease-in-out 0.4s;
+    /* display: none; */
+}
+
+
+#portfolio .portfolio-item {
+    overflow: hidden;
+    position: relative;
+    padding: 0;
+    vertical-align: middle;
+    text-align: center;
+}
+
+#portfolio .portfolio-item h2 {
+    color: rgb(166, 113, 177);
+    font-size: 16px;
+    margin: 0;
+    text-transform: capitalize;
+    font-weight: 700;
+    background: #00000085;
+    /* border: 1px solid #fff; */
+    padding: 25px;
+    background: linear-gradient(45deg, #fff57 0%, #405ece91 100%); 
+    display: none;
+}
+
+#portfolio .portfolio-item img {
+    -webkit-transition: all ease-in-out 0.4s;
+    transition: all ease-in-out 0.4s;
+    width: 100%;
+}
+
+#portfolio .portfolio-item:hover img {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+#portfolio .portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+#portfolio .portfolio-info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+}
